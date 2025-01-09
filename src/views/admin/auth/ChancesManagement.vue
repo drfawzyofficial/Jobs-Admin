@@ -249,9 +249,10 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <paginate :page-count="chancesCount" :click-handler="clickCallback" :prev-text="'السابق'"
+                            <div class="mt-4 d-flex justify-content-center" v-if="chancesCount > 1">
+                                <paginate :page-count="chancesCount" :click-handler="clickCallback" :prev-text="'السابق'"
                                 :next-text="'التالي'" :container-class="'pagination'" :page-class="'page-item'">
-                            </paginate>
+                            </paginate>                            </div>
                         </div>
                     </div>
                 </div>

@@ -110,9 +110,9 @@
                                                 <td colspan="12">لا يوجد بيانات</td>
                                             </tr>
                                             <tr v-else v-for="(contact, index) in contacts" :key="index">
-                                                <td>{{ contact.first_name + " " + contact.last_name }}</td>
-                                                <td>{{ contact.email }} </td>
-                                                <td>{{ contact.phone }} </td>
+                                                <td>{{ contact._studentID.first_name + " " + contact._studentID.last_name }}</td>
+                                                <td>{{ contact._studentID.email }} </td>
+                                                <td>{{ contact._studentID.phone }} </td>
                                                 <td>
                                                     <button type="button" class="btn btn-sm btn-store"
                                                         @click="openModalBox('الاستفسار', contact.message, true)">
@@ -144,10 +144,12 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="mt-4 d-flex justify-content-center" v-if="contactsCount > 1">
                                 <paginate :page-count="contactsCount" :click-handler="clickCallback"
                                     :prev-text="'السابق'" :next-text="'التالي'" :container-class="'pagination'"
                                     :page-class="'page-item'">
                                 </paginate>
+                                </div>
                             </div>
                         </div>
                     </div>

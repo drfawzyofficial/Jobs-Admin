@@ -241,7 +241,7 @@ export const Admin_Store = {
         const data = await Fetch("GET", `/admin/getcontacts/?page_no=${payload.page_no}`);
         if (data.statusCode === 200) {
           commit("contactsGet", data.result);
-        } else if (data.statusCode === 401 || data.statusCode === 500) {
+        } else if (data.statusCode === 401 || data.statusCode === 404 || data.statusCode === 500) {
           dispatch("Auth/Logout", {}, { root: true });
         } else {
           window.Swal.fire({ title: 'خطأ!', icon: "error", text: data.message, confirmButtonText: 'أتفهم' })
@@ -405,7 +405,7 @@ export const Admin_Store = {
       state.studentsCount = data.studentsCount;
     },
     contactsGet(state, data) {
-      state.contacts = data.contacts;
+      state.contacts = data.populatedContacts;
       state.contactsCount = data.contactsCount;
     },
     adminAdd(state, data) {

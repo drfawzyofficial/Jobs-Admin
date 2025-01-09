@@ -145,10 +145,12 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="mt-4 d-flex justify-content-center" v-if="studentsCount > 1">
                                 <paginate :page-count="studentsCount" :click-handler="clickCallback"
                                     :prev-text="'السابق'" :next-text="'التالي'" :container-class="'pagination'"
                                     :page-class="'page-item'">
                                 </paginate>
+                                </div>
                             </div>
                         </div>
                     </div>

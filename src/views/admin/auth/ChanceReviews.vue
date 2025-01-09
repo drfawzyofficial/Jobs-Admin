@@ -99,6 +99,8 @@
                                     ★
                                 </span>
                             </div>
+                            <h6 class="fw-bold mt-2">{{  review._studentID.first_name + " " + review._studentID.last_name}}</h6>
+
                             <div class="btn-actions mt-3">
                                 <button type="button" class="btn btn-store" @click="AcceptReview(review._id)">
                                     <span>موافقة</span>
@@ -124,10 +126,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <paginate :page-count="reviewsCount" :click-handler="clickCallback" :prev-text="'السابق'"
-                        :next-text="'التالي'" :container-class="'pagination'" :page-class="'page-item'">
-                    </paginate>
+                <div class="mt-4 d-flex justify-content-center" v-if="reviewsCount > 1">
+                        <paginate :page-count="reviewsCount" :click-handler="clickCallback" :prev-text="'السابق'"
+                            :next-text="'التالي'" :container-class="'pagination'" :page-class="'page-item'">
+                        </paginate>
                 </div>
             </div>
         </div>
