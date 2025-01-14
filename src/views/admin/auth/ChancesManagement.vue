@@ -139,6 +139,7 @@
                                             <th scope="col">نهاية التسجيل</th>
                                             <th scope="col">بداية الفرصة</th>
                                             <th scope="col">نهاية الفرصة</th>
+                                            <th scope="col">عدد مرات الظهور</th>
                                             <th scope="col">صورة الفرصة</th>
                                             <th scope="col">المستندات</th>
                                             <th scope="col">الملاحظات</th>
@@ -177,6 +178,7 @@
                                             <td>{{ chance.chanceRegEndDate }}</td>
                                             <td>{{ chance.chanceStartDate }}</td>
                                             <td>{{ chance.chanceEndDate }}</td>
+                                            <td>{{ chance.noOfClicks }}</td>
                                             <td><img class="border shadow-sm" :src="chance.chanceImage" /></td>
                                             <td>
                                                 <button type="button" class="btn btn-sm btn-store"

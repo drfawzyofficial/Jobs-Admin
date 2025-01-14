@@ -50,7 +50,6 @@ export const Collection = {
         async deletechanceSubcategory({ dispatch, commit }, payload) {
             try {
                 const data = await Fetch("DELETE", `/helper/deleteChanceSubcategory`, payload);
-                console.log(data);
                 if (data.statusCode === 200) {
                     commit("deleteChanceSubcategory", data.result);
                     window.Swal.fire({ title: 'حذف تصنيف الفرصة الفرعي', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })

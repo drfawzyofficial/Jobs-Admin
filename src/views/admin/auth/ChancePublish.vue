@@ -810,7 +810,6 @@ export default {
         const publishCreate = () => {
             chancePayload.value.documentsContent = quillDocs.value.getHTML();
             chancePayload.value.notesContent = quillNotes.value.getHTML();
-            console.log(chancePayload.value);
             store.dispatch("Admin_Store/chanceCreate", chancePayload.value)
         }
         const onFileChange = async (e) => {

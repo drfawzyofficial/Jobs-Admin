@@ -65,7 +65,6 @@ export const Auth = {
       try {
         dispatch("Collection/loading", true, { root: true });
         const data = await Fetch("GET", `/admin/chances/get/?page_no=${payload.page_no}`);
-        console.log(data);
         if (data.statusCode === 200) {
           commit("chancesGet", data.result);
         } else if (data.statusCode === 401 || data.statusCode === 500) {
@@ -81,7 +80,6 @@ export const Auth = {
         }
         dispatch("Collection/loading", false, { root: true });
       } catch (err) {
-        console.log(err.message);
         window.Swal.fire({ title: 'خطأ!', text: "خطأ برمجي", icon: 'error', confirmButtonText: 'أتفهم' });
         dispatch("Collection/loading", false, { root: true });
       }

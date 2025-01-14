@@ -88,39 +88,154 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4 col-12">
+                    <h5 class="fw-bold mb-3">إحصائيات عامة</h5>
+                    <div class="col-md-3 col-6">
                         <div class="dash-widget">
                             <div class="dash-widgetimg">
                                 <span><img src="../../../assets/img/icons/airplay.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5><span class="counters" data-count="{{ statistics.admins_count }}">{{
-                                    statistics.admins_count }}</span></h5>
+                                <h5><span class="counters" >{{
+                                    statistics.general.admins_count }}</span></h5>
                                 <h6>عدد المسئولين</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-12">
+                    <div class="col-md-3 col-6">
                         <div class="dash-widget dash1">
                             <div class="dash-widgetimg">
                                 <span><img src="../../../assets/img/icons/transcation.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5><span class="counters" data-count="{{ statistics.students_count }}">{{
-                                    statistics.students_count }}</span></h5>
+                                <h5><span class="counters" >{{
+                                     statistics.general.students_count }}</span></h5>
                                 <h6>عدد الطلبة</h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-12">
+                    <div class="col-md-3 col-6 mt-3 mt-md-0">
                         <div class="dash-widget dash2">
                             <div class="dash-widgetimg">
                                 <span><img src="../../../assets/img/icons/scan.svg" alt="img"></span>
                             </div>
                             <div class="dash-widgetcontent">
-                                <h5><span class="counters" data-count="{{ statistics.chances_count }}">{{
-                                    statistics.chances_count }}</span></h5>
-                                <h6>عدد الوظائف</h6>
+                                <h5><span class="counters">{{
+                                     statistics.general.chances_count }}</span></h5>
+                                <h6>عدد الفرص</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mt-3 mt-md-0">
+                        <div class="dash-widget dash2">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/scan.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters">{{
+                                     statistics.general.contacts_count }}</span></h5>
+                                <h6>عدد التواصل</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <h5 class="fw-bold mb-3">إحصائيات فرص</h5>
+                    <div class="col-md-3 col-6">
+                        <div class="dash-widget">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/airplay.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters" >{{
+                                    statistics.chance.openChances }}</span></h5>
+                                <h6>فرصة مفتوحة</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="dash-widget dash1">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/transcation.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters" >{{
+                                     statistics.chance.closedChances }}</span></h5>
+                                <h6>فرص مغلفة</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mt-3 mt-md-0">
+                        <div class="dash-widget dash2">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/scan.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters">{{
+                                     statistics.chance.notStartedChances }}</span></h5>
+                                <h6>فرص لم تبدأ</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mt-3 mt-md-0">
+                        <div class="dash-widget dash2">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/scan.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters">{{
+                                     statistics.chance.specialConditionsChances }}</span></h5>
+                                <h6>فرص بشروط خاصة</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <h5 class="fw-bold mb-3">إحصائيات طلاب</h5>
+                    <div class="col-md-3 col-6">
+                        <div class="dash-widget">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/airplay.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters" >{{
+                                    statistics.student.genderDistribution.male }}</span></h5>
+                                <h6>ذكور</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="dash-widget dash1">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/transcation.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters" >{{
+                                     statistics.student.genderDistribution.female }}</span></h5>
+                                <h6>إناث</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mt-3 mt-md-0">
+                        <div class="dash-widget dash2">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/scan.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters">{{
+                                     statistics.student.onlineStatus.online }}</span></h5>
+                                <h6>أونلاين</h6> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mt-3 mt-md-0">
+                        <div class="dash-widget dash2">
+                            <div class="dash-widgetimg">
+                                <span><img src="../../../assets/img/icons/scan.svg" alt="img"></span>
+                            </div>
+                            <div class="dash-widgetcontent">
+                                <h5><span class="counters">{{
+                                    statistics.student.onlineStatus.offline }}</span></h5>
+                                <h6>أوفلاين</h6>
                             </div>
                         </div>
                     </div>
