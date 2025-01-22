@@ -1225,6 +1225,7 @@ span.counter {
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-right: 1px solid #E8EBED;
+  background-color: #000;
 }
 
 .header .header-left .logo {
@@ -1233,8 +1234,7 @@ span.counter {
 }
 
 .header .header-left .logo img {
-  height: 125px;
-  width: 125px;
+  height: 70px;
 }
 
 @media (max-width: 991px) {

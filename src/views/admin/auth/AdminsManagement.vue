@@ -121,7 +121,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="fw-bold">جميع المسئولين</h4>
-                                <p class="mt-2">الحذف المسئولين ماعدا أنتَ. يمكنك إدارتها بشكل كامل من حيث الحذف </p>
+                                <p class="mt-2">الحذف المسؤولين ماعدا أنتَ. يمكنك إدارتها بشكل كامل من حيث الحذف </p>
                                 <div class="table-responsive mt-3">
                                     <table class="table text-center">
                                         <thead class="table-light">
