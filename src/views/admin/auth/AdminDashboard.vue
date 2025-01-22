@@ -45,7 +45,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
                                     to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"><span>
-                                        إدارة المسئول</span> </router-link>
+                                        إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
@@ -56,7 +56,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
                                     to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
-                                        إدارة المسئولين</span> </router-link>
+                                        إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContactsManagement' }"
@@ -97,7 +97,7 @@
                             <div class="dash-widgetcontent">
                                 <h5><span class="counters" >{{
                                     statistics.general.admins_count }}</span></h5>
-                                <h6>عدد المسئولين</h6>
+                                <h6>عدد المسؤولين</h6>
                             </div>
                         </div>
                     </div>

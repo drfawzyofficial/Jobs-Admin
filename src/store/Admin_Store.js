@@ -329,11 +329,11 @@ export const Admin_Store = {
         const data = await Fetch("DELETE", `/admin/admin/remove`, { _id: payload._id });
         if (data.statusCode === 200) {
           commit("deleteAdmin", data.result);
-          window.Swal.fire({ title: 'حذف المسئول', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })
+          window.Swal.fire({ title: 'حذف المسؤول ', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })
         } else if (data.statusCode === 401 || data.statusCode === 500) {
           dispatch("Auth/Logout", {}, { root: true });
         } else {
-          window.Swal.fire({ title: 'حذف المسئول', text: data.message, icon: 'error', confirmButtonText: 'أتفهم' })
+          window.Swal.fire({ title: 'حذف المسؤول ', text: data.message, icon: 'error', confirmButtonText: 'أتفهم' })
         }
         dispatch("Collection/loading", false, { root: true });
       } catch (err) {

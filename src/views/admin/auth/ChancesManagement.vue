@@ -44,7 +44,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
                                     to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"><span>
-                                        إدارة المسئول</span> </router-link>
+                                        إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
@@ -55,7 +55,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
                                     to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
-                                        إدارة المسئولين</span> </router-link>
+                                        إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContactsManagement' }"
@@ -122,7 +122,7 @@
                                 </div>
                             </div>
                             <h4 class="fw-bold">جميع الفرص</h4>
-                            <p class="mt-2">جميع الفرص التي تم نشرها من قبل المسئول. يمكنك إدارتها بشكل كامل من حيث التعديل والحذف</p>
+                            <p class="mt-2">جميع الفرص التي تم نشرها من قبل المسؤول . يمكنك إدارتها بشكل كامل من حيث التعديل والحذف</p>
                             <div class="table-responsive mb-3 mt-3">
                                 <table class="table text-center">
                                     <thead class="table-light">

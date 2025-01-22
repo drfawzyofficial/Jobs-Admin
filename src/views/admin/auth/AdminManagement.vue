@@ -44,7 +44,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
                                     to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"><span>
-                                        إدارة المسئول</span> </router-link>
+                                        إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
@@ -55,7 +55,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
                                     to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
-                                        إدارة المسئولين</span> </router-link>
+                                        إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContactsManagement' }"
@@ -81,7 +81,7 @@
                         <h3 class="page-title">لوحة التحكم</h3>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><router-link to="/dashboard">لوحة التحكم</router-link></li>
-                            <li class="breadcrumb-item active">إدارة المسئول</li>
+                            <li class="breadcrumb-item active">إدارة المسؤول </li>
                         </ul>
                     </div>
                 </div>

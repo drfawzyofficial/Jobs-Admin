@@ -166,7 +166,7 @@ button:focus {
 }
 
 a {
-  color: #2B7A7B;
+  color: #44B797;
   cursor: pointer;
   text-decoration: none;
   -webkit-transition: all 0.2s ease;
@@ -198,8 +198,8 @@ strong {
 }
 
 .btn-store {
-  background-color: #2B7A7B;
-  border: 1px solid #2B7A7B;
+  background-color: #44B797;
+  border: 1px solid #44B797;
   color: #FFF;
   font-size: 1rem;
 }
@@ -1932,7 +1932,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .sidebar .sidebar-menu>ul>li>a.active {
-  background: #2B7A7B;
+  background: #44B797;
   color: #fff;
   border-radius: 5px;
 }
@@ -2932,19 +2932,19 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .form-check-input:checked {
-  background-color: #2B7A7B;
-  border-color: #2B7A7B;
+  background-color: #44B797;
+  border-color: #44B797;
 }
 
 /* vue-form-wizard */
 .vue-form-wizard .wizard-icon-circle .wizard-icon-container,
 .vue-form-wizard .wizard-navigation .wizard-progress-with-circle .wizard-progress-bar {
-  background-color: #2B7A7B !important;
+  background-color: #44B797 !important;
 }
 
 .vue-form-wizard .stepTitle,
 .vue-form-wizard .wizard-icon-circle .wizard-icon {
-  color: #2B7A7B !important;
+  color: #44B797 !important;
   font-weight: bold;
 }
 
@@ -2955,7 +2955,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .vue-form-wizard.sm .wizard-icon-circle {
-  border-color: #2B7A7B !important;
+  border-color: #44B797 !important;
 }
 
 /* vue-form-wizard */
@@ -2972,7 +2972,7 @@ span.select2-container.select2-container--default.select2-container--open {
 
 
 .wizard-navigation .nav-link {
-  color: #2B7A7B;
+  color: #44B797;
   font-weight: 500;
 }
 .wizard-navigation .nav-link:hover {
@@ -2984,7 +2984,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .swal2-styled.swal2-confirm {
-  background-color: #2B7A7B;
+  background-color: #44B797;
   transition: all 0.3s ease-in-out;
 }
 

@@ -44,7 +44,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
                                     to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"><span>
-                                        إدارة المسئول</span> </router-link>
+                                        إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
@@ -55,7 +55,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
                                     to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
-                                        إدارة المسئولين</span> </router-link>
+                                        إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContactsManagement' }"
@@ -91,7 +91,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="fw-bold">إضافة مسئول</h4>
-                                <p class="mt-2">يمكنك إضافة الكثير من المسئولين</p>
+                                <p class="mt-2">يمكنك إضافة الكثير من المسؤولين</p>
                                 <div class="row mt-3">
                                     <div class="col-md-4">
                                         <input class="form-control form-control-lg" type="text" placeholder="الاسم"
@@ -120,15 +120,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="fw-bold">جميع المسئولين</h4>
+                                <h4 class="fw-bold">جميع المسؤولين</h4>
                                 <p class="mt-2">الحذف المسؤولين ماعدا أنتَ. يمكنك إدارتها بشكل كامل من حيث الحذف </p>
                                 <div class="table-responsive mt-3">
                                     <table class="table text-center">
                                         <thead class="table-light">
                                             <tr>
-                                                <th scope="col">اسم المسئول</th>
+                                                <th scope="col">اسم المسؤول </th>
                                                 <th scope="col">البريد الإلكتروني</th>
-                                                <th scope="col">حذف المسئول</th>
+                                                <th scope="col">حذف المسؤول </th>
                                             </tr>
                                         </thead>
                                         <tbody>

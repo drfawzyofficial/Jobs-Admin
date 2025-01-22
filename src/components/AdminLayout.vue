@@ -44,7 +44,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
                                     to="/admin/manage"><img src="../assets/img/icons/time.svg" alt="img"><span>
-                                        إدارة المسئول</span> </router-link>
+                                        إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
@@ -54,7 +54,7 @@
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
                                     to="/admins/manage"><img src="../assets/img/icons/users1.svg" alt="img"><span>
-                                        إدارة المسئولين</span> </router-link>
+                                        إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <a @click="AdminLogout"><img src="../assets/img/icons/log-out.svg" alt="img"><span>
