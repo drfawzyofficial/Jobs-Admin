@@ -1225,7 +1225,6 @@ span.counter {
   -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
   border-right: 1px solid #E8EBED;
-  background-color: #000;
 }
 
 .header .header-left .logo {
