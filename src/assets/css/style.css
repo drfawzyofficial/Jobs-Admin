@@ -48,10 +48,10 @@ ul {
   font-size: 16px;
 }
 
-.modal-body ol li:first-child,
+/* .modal-body ol li:first-child,
 .modal-body ul li:first-child {
   margin-top: 0;
-}
+} */
 
 
 table {
@@ -1240,11 +1240,6 @@ span.counter {
   .header .header-left .logo {
     text-align: center;
     width: 100%;
-  }
-
-  .header .header-left .logo img {
-    height: 125px;
-    width: 125px;
   }
 }
 
@@ -2907,11 +2902,13 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 
 .btn-degree {
-  height: 40px;
-  width: 40px;
   background-color: #DEF2F1;
   border: 1px solid #3aafa9;
   transition: all 0.3s ease-in-out;
+}
+
+.ql-editor li:not(.ql-direction-rtl)::before {
+  margin-left: -0.5rem;
 }
 
 

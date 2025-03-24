@@ -22,9 +22,12 @@
         <div class="sidebar" id="sidebar">
             <perfect-scrollbar class="scroll-area" :settings="settings" @ps-scroll-y="scrollHanle">
                 <div class="sidebar-inner slimscroll">
-
                     <div id="sidebar-menu" class="sidebar-menu">
-                        <ul>
+                        <div class="d-flex justify-content-center d-block d-lg-none">
+                            <a class="mobile-btn-close" id="mobile_btn_close"><img src="../../../assets/img/icons/close-circle1.svg"
+                            alt="img" height="35" width="35"></a>
+                        </div>
+                        <ul class="mt-3">
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminDashboard' }" to="/dashboard"><img
                                         src="../../../assets/img/icons/dashboard.svg" alt="img"><span>
@@ -70,7 +73,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </perfect-scrollbar>
         </div>
@@ -133,7 +135,7 @@
                             <div class="dash-widgetcontent">
                                 <h5><span class="counters">{{
                                      statistics.general.contacts_count }}</span></h5>
-                                <h6>عدد التواصل</h6>
+                                <h6>عدد التعليقات</h6>
                             </div>
                         </div>
                     </div>
@@ -223,7 +225,7 @@
                             <div class="dash-widgetcontent">
                                 <h5><span class="counters">{{
                                      statistics.student.onlineStatus.online }}</span></h5>
-                                <h6>أونلاين</h6> 
+                                <h6>متصل</h6> 
                             </div>
                         </div>
                     </div>
@@ -235,7 +237,7 @@
                             <div class="dash-widgetcontent">
                                 <h5><span class="counters">{{
                                     statistics.student.onlineStatus.offline }}</span></h5>
-                                <h6>أوفلاين</h6>
+                                <h6>غير متصل</h6>
                             </div>
                         </div>
                     </div>
@@ -272,6 +274,11 @@ export default {
             $(document).on('click', '#mobile_btn', () => {
                 $("body").addClass('slide-nav');
                 $('.sidebar-overlay').addClass('opened');
+                return false;
+            });
+            $(document).on('click', '#mobile_btn_close', () => {
+                $("body").removeClass('slide-nav');
+                $('.sidebar-overlay').removeClass('opened');
                 return false;
             });
             // Mobile User Menu

@@ -24,7 +24,11 @@
                 <div class="sidebar-inner slimscroll">
 
                     <div id="sidebar-menu" class="sidebar-menu">
-                        <ul>
+                        <div class="d-flex justify-content-center d-block d-lg-none">
+                            <a class="mobile-btn-close" id="mobile_btn_close"><img src="../../../assets/img/icons/close-circle1.svg"
+                            alt="img" height="35" width="35"></a>
+                        </div>
+                        <ul class="mt-3">
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminDashboard' }" to="/dashboard"><img
                                         src="../../../assets/img/icons/dashboard.svg" alt="img"><span>
@@ -58,8 +62,8 @@
                                         إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
-                                <router-link :class="{ 'active': currentPath == 'ContactsManagement' }"
-                                    to="/students/contacts"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                <router-link :class="{ 'active': currentPath == 'ContACTsManagement' }"
+                                    to="/students/contACTs"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
                                         إدارة التواصل</span> </router-link>
                             </li>
                             <li>
@@ -143,8 +147,8 @@
                                             <th scope="col">صورة الفرصة</th>
                                             <th scope="col">المستندات</th>
                                             <th scope="col">الملاحظات</th>
-                                            <th scope="col">مستوى الإنجليزية</th>
-                                            <th scope="col">مستوى العقلية</th>
+                                            <th scope="col">اختبارات اللغة الإنجليزية</th>
+                                            <th scope="col">اختبارات القدرات العقلية</th>
                                             <th scope="col">مستوى المنهج</th>
                                             <th scope="col">العمليات</th>
                                         </tr>
@@ -182,7 +186,7 @@
                                             <td><img class="border shadow-sm" :src="chance.chanceImage" /></td>
                                             <td>
                                                 <button type="button" class="btn btn-sm btn-store"
-                                                    @click="openModalBox('المستندات', chance.documentsContent, true)">
+                                                    @click="openModalBox('المستندات', chance.documentsContent? chance.documentsContent : 'لا يوجد مستندات', true)">
                                                     <span>فتح</span>
                                                     <span class="material-symbols-outlined align-middle ms-1 fs-6">
                                                         open_in_new
@@ -362,7 +366,7 @@
                                         </div>
                                         <div class="mt-2">
                                             <button type="button" class="btn btn-store" @click="resetCities()">
-                                                <span class="word">تصحيح</span>
+                                                <span class="word">إعادة التعيين</span>
                                                 <span class="material-symbols-outlined align-middle ms-1">
                                                     check
                                                 </span>
@@ -409,9 +413,10 @@
                                                         v-model="chancePayload.marketingDesc">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="marketingDesc" class="form-label">وصف الفرصة</label>
-                                                    <textarea class="form-control" rows="3" v-model="chancePayload.chanceDesc"></textarea>
-                                                </div>
+                                        <label for="marketingDesc" class="form-label">وصف الفرصة</label>
+                                        <QuillEditor placeholder="اكتب وصف الفرصة" toolbar='full' theme='snow'
+                                            ref="quillChanceDesc" />
+                                    </div>
                                                 <div class="form-check mb-3">
                                                     <input class="form-check-input" type="checkbox" v-model="chancePayload.specialConditions" id="specialConditions">
                                                     <label class="form-check-label ms-1" for="specialConditions">
@@ -492,7 +497,7 @@
                                                     </div>
                                                     <div class="mt-2">
                                                         <button type="button" class="btn btn-store" @click="resetApplicantEdus()">
-                                                            <span class="word">تصحيح</span>
+                                                            <span class="word">إعادة التعيين</span>
                                                             <span class="material-symbols-outlined align-middle ms-1">
                                                                 check
                                                             </span>
@@ -508,9 +513,9 @@
                                                     aria-controls="home" aria-selected="true">IELTS</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#TOFEL"
-                                                    id="TOFEL-tab" type="button" role="tab" aria-controls="TOFEL"
-                                                    aria-selected="false">TOFEL</button>
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#TOEFL"
+                                                    id="TOEFL-tab" type="button" role="tab" aria-controls="TOEFL"
+                                                    aria-selected="false">TOEFL</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#TOEIC"
@@ -538,41 +543,41 @@
                                                 aria-labelledby="home-tab">
                                                 <button type="button" class="btn btn-degree m-2"
                                                     v-for="(obj, index) in IELTSDegress" :key="index"
-                                                    @click="selectIELTSDegree(obj.degree)"
-                                                    :class="{ 'btn-degree-selected': obj.degree == chancePayload.EnglishStandard.IELTSDegree }">{{
+                                                    @click="selectIELTS(obj.degree)"
+                                                    :class="{ 'btn-degree-selected': obj.degree == chancePayload.EnglishStandard.IELTS }">{{
                                                         obj.degree }}</button>
                                             </div>
-                                            <div class="tab-pane fade p-3" id="TOFEL" role="tabpanel">
+                                            <div class="tab-pane fade p-3" id="TOEFL" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="120"
-                                                    v-model="chancePayload.EnglishStandard.TOFELDegree">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOFELDegree }}</h6>
+                                                    v-model="chancePayload.EnglishStandard.TOEFLDegree">
+                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEFLDegree }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="TOEIC" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="990"
-                                                    v-model="chancePayload.EnglishStandard.TOEICDegree">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEICDegree }}</h6>
+                                                    v-model="chancePayload.EnglishStandard.TOEIC">
+                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEIC }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="DUOLINGO" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="160"
-                                                    v-model="chancePayload.EnglishStandard.DUOLINGODegree">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.DUOLINGODegree }}</h6>
+                                                    v-model="chancePayload.EnglishStandard.DUOLINGO">
+                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.DUOLINGO }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="Step" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.EnglishStandard.stepDegree">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.stepDegree }}</h6>
+                                                    v-model="chancePayload.EnglishStandard.STEP">
+                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.STEP }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="CEFR" role="tabpanel">
                                                 <button type="button" class="btn btn-degree m-2"
-                                                    v-for="(obj, index) in CEFRDegrees" :key="index"
-                                                    @click="selectCEFRDegree(obj.degree)"
-                                                    :class="{ 'btn-degree-selected': obj.degree == chancePayload.EnglishStandard.CEFRDegree }">{{
+                                                    v-for="(obj, index) in CEFRs" :key="index"
+                                                    @click="selectCEFR(obj.degree)"
+                                                    :class="{ 'btn-degree-selected': obj.degree == chancePayload.EnglishStandard.CEFR }">{{
                                                         obj.degree }}</button>
                                             </div>
                                         </div>
                                         <div>
                                             <button type="button" class="btn btn-store" @click="resetEnglishStandard()">
-                                                <span class="word">تصحيح</span>
+                                                <span class="word">إعادة التعيين</span>
                                                 <span class="material-symbols-outlined align-middle ms-1">
                                                     check
                                                 </span>
@@ -580,7 +585,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">تحديد مستوى القدرات العقلية</label>
+                                        <label class="form-label">تحديد اختبارات القدرات العقلية</label>
                                         <ul class="nav nav-tabs mt-2" id="otherMyTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" data-bs-toggle="tab"
@@ -598,8 +603,8 @@
                                                     aria-selected="false">GAT</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#act"
-                                                    id="act-tab" type="button" role="tab" aria-controls="act"
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#ACT"
+                                                    id="ACT-tab" type="button" role="tab" aria-controls="ACT"
                                                     aria-selected="false">ACT</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -608,8 +613,8 @@
                                                     aria-selected="false">مقياس موهبة</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#AchievementTest"
-                                                    id="AchievementTest-tab" type="button" role="tab" aria-controls="AchievementTest"
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#AchivementTest"
+                                                    id="AchivementTest-tab" type="button" role="tab" aria-controls="AchivementTest"
                                                     aria-selected="false">التحصيل المعرفي</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -634,20 +639,20 @@
                                                     v-model="chancePayload.BrainStandard.GAT">
                                                 <h6 class="ms-2">{{ chancePayload.BrainStandard.GAT }}</h6>
                                             </div>
-                                            <div class="tab-pane fade p-3" id="act" role="tabpanel">
+                                            <div class="tab-pane fade p-3" id="ACT" role="tabpanel">
                                                 <input type="range" class="form-range" min="1" max="36"
-                                                    v-model="chancePayload.BrainStandard.act">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.act }}</h6>
+                                                    v-model="chancePayload.BrainStandard.ACT">
+                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.ACT }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="Talent" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="2000"
                                                     v-model="chancePayload.BrainStandard.Talent">
                                                 <h6 class="ms-2">{{ chancePayload.BrainStandard.Talent }}</h6>
                                             </div>
-                                            <div class="tab-pane fade p-3" id="AchievementTest" role="tabpanel">
+                                            <div class="tab-pane fade p-3" id="AchivementTest" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.BrainStandard.AchievementTest">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.AchievementTest }}</h6>
+                                                    v-model="chancePayload.BrainStandard.AchivementTest">
+                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.AchivementTest }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="SAAT" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="100"
@@ -657,7 +662,7 @@
                                         </div>
                                         <div>
                                             <button type="button" class="btn btn-store" @click="resetBrainStandard()">
-                                                <span class="word">تصحيح</span>
+                                                <span class="word">إعادة التعيين</span>
                                                 <span class="material-symbols-outlined align-middle ms-1">
                                                     check
                                                 </span>
@@ -697,15 +702,18 @@
                                                     v-model="chancePayload.CurStandard.BritishCur">
                                                 <h6 class="ms-2">{{ chancePayload.CurStandard.BritishCur }}</h6>
                                             </div>
-                                            <div class="tab-pane fade p-3" id="AmericanDiploma" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="4"
-                                                    v-model="chancePayload.CurStandard.AmericanDiploma">
-                                                <h6 class="ms-2">{{ chancePayload.CurStandard.AmericanDiploma }}</h6>
+                                            <div class="tab-pane fade p-3" id="AmericanDiploma" role="tabpanel"
+                                                aria-labelledby="home-tab">
+                                                <button type="button" class="btn btn-degree m-2"
+                                                    v-for="(obj, index) in AmericanDiplomaDegrees" :key="index"
+                                                    @click="selectAmericanDiploma(obj.degree)"
+                                                    :class="{ 'btn-degree-selected': obj.degree == chancePayload.CurStandard.AmericanDiploma }">{{
+                                                        obj.degree }}</button>
                                             </div>
                                         </div>
                                         <div>
                                             <button type="button" class="btn btn-store" @click="resetCurStandard()">
-                                                <span class="word">تصحيح</span>
+                                                <span class="word">إعادة التعيين</span>
                                                 <span class="material-symbols-outlined align-middle ms-1">
                                                     check
                                                 </span>
@@ -818,6 +826,11 @@ export default {
                 $('.sidebar-overlay').addClass('opened');
                 return false;
             });
+            $(document).on('click', '#mobile_btn_close', () => {
+                $("body").removeClass('slide-nav');
+                $('.sidebar-overlay').removeClass('opened');
+                return false;
+            });
             // Mobile User Menu
             $(document).on('click', '.mobile-user-menu .nav-link', () => {
                 $(".dropdown-menu ").toggleClass("show");
@@ -875,18 +888,18 @@ export default {
             applicantNat: 'الجنسية',
             applicantEdus: [],
             EnglishStandard: {
-                IELTSDegree: '',
-                TOFELDegree: '',
-                TOEICDegree: '',
-                DUOLINGODegree: '',
-                stepDegree: '',
-                CEFRDegree: '',
+                IELTS: '',
+                TOEFLDegree: '',
+                TOEIC: '',
+                DUOLINGO: '',
+                STEP: '',
+                CEFR: '',
             },
             BrainStandard: {
                 Sat: '',
                 Qudrat: '',
                 GAT: '',
-                act: '',
+                ACT: '',
                 Talent: '',
             },
             CurStandard: {
@@ -905,6 +918,7 @@ export default {
         const modalContent = ref('');
         const wizard = ref('wizard');
         const quillDocs = ref('quillDocs');
+        const quillChanceDesc = ref('quillChanceDesc');
         const quillNotes = ref('quillNotes');
         const modalContentRef = ref(null);
         const modalEditRef = ref(null);
@@ -971,7 +985,60 @@ export default {
 
 
         ]);
-        const CEFRDegrees = ref([
+        const AmericanDiplomaDegrees = ref([
+            {
+                degree: "0"
+            },
+            {
+                degree: "0.25"
+            },
+            {
+                degree: "0.5"
+            },
+            {
+                degree: "0.75"
+            },
+            {
+                degree: "1"
+            },
+            {
+                degree: "1.25"
+            },
+            {
+                degree: "1.5"
+            },
+            {
+                degree: "1.75"
+            },
+            {
+                degree: "2"
+            },
+            {
+                degree: "2.25"
+            },
+            {
+                degree: "2.5"
+            },
+            {
+                degree: "2.75"
+            },
+            {
+                degree: "3"
+            },
+            {
+                degree: "3.25"
+            },
+            {
+                degree: "3.5"
+            },
+            {
+                degree: "3.75"
+            },
+            {
+                degree: "4"
+            },
+        ]);
+        const CEFRs = ref([
             {
                 degree: "A1"
             },
@@ -995,6 +1062,7 @@ export default {
         store.dispatch("Admin_Store/chancesGet", { page_no: 1 });
         store.dispatch("Collection/GetHelper")
         const chanceEdit = () => {
+            chancePayload.value.chanceDesc = quillChanceDesc.value.getHTML();
             chancePayload.value.documentsContent = quillDocs.value.getHTML();
             chancePayload.value.notesContent = quillNotes.value.getHTML();
             store.dispatch("Admin_Store/chanceEdit", chancePayload.value)
@@ -1019,7 +1087,8 @@ export default {
             chancePayload.value = chance;
             imagePreview.value = chance.chanceImage;
             chancePayload.value.chanceImage = "";
-            quillDocs.value.setHTML(chance.documentsContent);
+            quillChanceDesc.value.setHTML(chance.chanceDesc);
+            quillDocs.value.setHTML(chance.documentsContent? chance.documentsContent : "");
             quillNotes.value.setHTML(chance.notesContent);
             new Modal(modalEditRef.value).show();
         }
@@ -1037,11 +1106,14 @@ export default {
             imagePreview.value = URL.createObjectURL(e.target.files[0]);
             chancePayload.value.chanceImage = await convertBase64(e.target.files[0]);
         }
-        const selectIELTSDegree = (degree) => {
-            chancePayload.value.EnglishStandard.IELTSDegree = degree;
+        const selectIELTS = (degree) => {
+            chancePayload.value.EnglishStandard.IELTS = degree;
         }
-        const selectCEFRDegree = (degree) => {
-            chancePayload.value.EnglishStandard.CEFRDegree = degree;
+        const selectAmericanDiploma = (degree) => {
+            chancePayload.value.CurStandard.AmericanDiploma = degree;
+        }
+        const selectCEFR = (degree) => {
+            chancePayload.value.EnglishStandard.CEFR = degree;
         }
         const search = () => {
             store.dispatch("Admin_Store/chancesSearch", filter.value)
@@ -1071,12 +1143,12 @@ export default {
         }
         const resetEnglishStandard = () => {
             chancePayload.value.EnglishStandard = {
-                IELTSDegree: '',
-                TOFELDegree: '',
-                TOEICDegree: '',
-                DUOLINGODegree: '',
-                stepDegree: '',
-                CEFRDegree: '',
+                IELTS: '',
+                TOEFLDegree: '',
+                TOEIC: '',
+                DUOLINGO: '',
+                STEP: '',
+                CEFR: '',
             }
         }
         const resetBrainStandard = () => {
@@ -1084,9 +1156,9 @@ export default {
                 Sat: '',
                 Qudrat: '',
                 GAT: '',
-                act: '',
+                ACT: '',
                 Talent: '',
-                AchievementTest: '',
+                AchivementTest: '',
                 SAAT: ''
             }
         }
@@ -1117,14 +1189,17 @@ export default {
             wizard,
             chancePayload,
             cities,
+            quillChanceDesc,
             quillDocs,
             quillNotes,
             IELTSDegress,
-            CEFRDegrees,
+            AmericanDiplomaDegrees,
+            CEFRs,
             closeEditModal,
             onFileChange,
-            selectIELTSDegree,
-            selectCEFRDegree,
+            selectIELTS,
+            selectAmericanDiploma,
+            selectCEFR,
             imagePreview,
             chanceEdit,
             chancesCount,

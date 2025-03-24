@@ -24,7 +24,11 @@
                 <div class="sidebar-inner slimscroll">
 
                     <div id="sidebar-menu" class="sidebar-menu">
-                        <ul>
+                        <div class="d-flex justify-content-center d-block d-lg-none">
+                            <a class="mobile-btn-close" id="mobile_btn_close"><img src="../../../assets/img/icons/close-circle1.svg"
+                            alt="img" height="35" width="35"></a>
+                        </div>
+                        <ul class="mt-3">
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminDashboard' }" to="/dashboard"><img
                                         src="../../../assets/img/icons/dashboard.svg" alt="img"><span>
@@ -247,6 +251,11 @@ export default {
             $(document).on('click', '#mobile_btn', () => {
                 $("body").addClass('slide-nav');
                 $('.sidebar-overlay').addClass('opened');
+                return false;
+            });
+            $(document).on('click', '#mobile_btn_close', () => {
+                $("body").removeClass('slide-nav');
+                $('.sidebar-overlay').removeClass('opened');
                 return false;
             });
             // Mobile User Menu

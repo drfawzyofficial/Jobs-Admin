@@ -24,7 +24,11 @@
                 <div class="sidebar-inner slimscroll">
 
                     <div id="sidebar-menu" class="sidebar-menu">
-                        <ul>
+                        <div class="d-flex justify-content-center d-block d-lg-none">
+                            <a class="mobile-btn-close" id="mobile_btn_close"><img src="../../../assets/img/icons/close-circle1.svg"
+                            alt="img" height="35" width="35"></a>
+                        </div>
+                        <ul class="mt-3">
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminDashboard' }" to="/dashboard"><img
                                         src="../../../assets/img/icons/dashboard.svg" alt="img"><span>
@@ -81,7 +85,7 @@
                             <h3 class="page-title">لوحة التحكم</h3>
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item"><router-link to="/dashboard">لوحة التحكم</router-link></li>
-                                <li class="breadcrumb-item active">إضافة مسئولين</li>
+                                <li class="breadcrumb-item active">إضافة مسؤولين</li>
                             </ul>
                         </div>
                     </div>
@@ -90,8 +94,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="fw-bold">إضافة مسئول</h4>
-                                <p class="mt-2">يمكنك إضافة الكثير من المسؤولين</p>
+                                <h4 class="fw-bold">إضافة مسؤول</h4>
+                                <p class="mt-2">يمكنك إضافة مسؤول جديد هنا</p>
                                 <div class="row mt-3">
                                     <div class="col-md-4">
                                         <input class="form-control form-control-lg" type="text" placeholder="الاسم"
@@ -121,7 +125,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="fw-bold">جميع المسؤولين</h4>
-                                <p class="mt-2">الحذف المسؤولين ماعدا أنتَ. يمكنك إدارتها بشكل كامل من حيث الحذف </p>
+                                <p class="mt-2">يمكنك هنا إدارة المسؤولين بشكل كامل، مع إمكانية حذف جميع المسؤولين باستثناء نفسك.</p>
                                 <div class="table-responsive mt-3">
                                     <table class="table text-center">
                                         <thead class="table-light">
@@ -187,6 +191,11 @@ export default {
             $(document).on('click', '#mobile_btn', () => {
                 $("body").addClass('slide-nav');
                 $('.sidebar-overlay').addClass('opened');
+                return false;
+            });
+            $(document).on('click', '#mobile_btn_close', () => {
+                $("body").removeClass('slide-nav');
+                $('.sidebar-overlay').removeClass('opened');
                 return false;
             });
             // Mobile User Menu

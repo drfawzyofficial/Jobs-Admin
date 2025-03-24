@@ -1,4 +1,4 @@
-// Utils for our Jobs App
+// Utils for our Khattit App
 export const convertBase64 = (file) => {
   return new Promise((resolve, reject) => {
     const fileReader = new FileReader();

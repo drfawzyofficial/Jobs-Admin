@@ -8,7 +8,7 @@
                     <div class="login-content">
                         <div class="login-userset">
                             <div class="login-logo">
-                                <img class="hermosa-image rounded-circle" src="../../../assets/img/logo.png" alt="img">
+                                <img class="khattit-image rounded-circle" src="../../../assets/img/logo.png" alt="img">
                             </div>
                             <div class="login-userheading">
                                 <h3>تسجيل الدخول</h3>
@@ -80,8 +80,7 @@ export default {
 
 <!-- Style -->
 <style scoped>
-.hermosa-image {
-    height: 150px;
+.khattit-image {
     width: 150px;
 }
 

@@ -1,7 +1,7 @@
 {
-  "name": "jobs-app",
+  "name": "khattit admin",
   "version": "1.0.0",
-  "description": "Jobs App is a web app that provides jobs to studentsYy",
+  "description": "Khattit Admin is a web app that provides jobs to studentsYy",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server",
