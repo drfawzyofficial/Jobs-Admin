@@ -63,7 +63,7 @@
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContACTsManagement' }"
-                                    to="/students/contACTs"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                    to="/students/contacts"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
                                         إدارة التواصل</span> </router-link>
                             </li>
                             <li>
@@ -97,26 +97,26 @@
                             <h4 class="fw-bold">بحث كامل</h4>
                             <p class="mt-2">يهدف البحث الكامل إلى تصفية كافة الفرص بشكل شامل. يمكنك إدخال بعض أو جميع المدخلات أدناه، ثم الضغط على زر البحث لتصفية الفرص المتاحة.</p>
                             <div class="row my-3">
-                                <div class="col-lg-3 col-md-6 mt-3 mt-md-0">
+                                <div class="col-xl-3 mt-3 mt-xl-0">
                                     <select class="form-select form-select-lg" v-model="filter.programStatus">
                                         <option value="none">حالة البرنامج</option>
                                         <option value="حضوري">حضوري</option>
                                         <option value="عن بُعد">عن بُعد</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                                <div class="col-xl-3 mt-3 mt-xl-0">
                                     <select class="form-select form-select-lg" v-model="filter.chanceCategory">
                                         <option value="none">التصنيف الرئيسي</option>
                                         <option v-for="(val, index) in helperObj.chanceCategories" :key="index" :value="val">{{ val }}</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-3 col-md-6 mt-3 mt-lg-0">
+                                <div class="col-xl-3 mt-3 mt-xl-0">
                                     <select class="form-select form-select-lg" v-model="filter.chanceSubcategory">
                                         <option value="none">التصنيف الفرعي</option>
                                         <option v-for="(val, index) in helperObj.chanceSubcategories" :key="index" :value="val">{{ val }}</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-xl-3 mt-3 mt-xl-0">
                                     <button type="button" class="btn btn-store" @click="search()">
                                         <span>بحث</span>
                                         <span class="material-symbols-outlined align-middle">
@@ -167,13 +167,15 @@
                                             <td>{{ chance.chancePrice ? chance.chancePrice + " ريال" : 'لا يوجد' }}</td>
                                             <td>{{ chance.provider }}</td>
                                             <td>
-                                                {{ chance.chancePriority == "saudi"? "سعوي الجنسية" : "للجميع" }}
+                                                {{ chance.chancePriority == "saudi"? "سعوي الجنسية" : "الجميع" }}
                                             </td>
                                             <td>
                                                 {{ chance.programStatus }}
                                                 <div v-if="chance.programStatus == 'حضوري'">
-                                                    <span class="ms-1" v-for="(val, index) in chance.cities" :key="index"
-                                                    :value="val"> {{ val }} </span> 
+                                                (<span class="ms-1" v-for="(val, index) in chance.cities" :key="index"
+                                                    :value="val"> 
+                                                    {{ val }}<span v-if="index !== chance.cities.length - 1"> - </span>
+                                                </span> )
                                                 </div>
                                             </td>
                                             <td>{{ chance.chanceCategory }}</td>
@@ -548,24 +550,24 @@
                                                         obj.degree }}</button>
                                             </div>
                                             <div class="tab-pane fade p-3" id="TOEFL" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="120"
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و120"
                                                     v-model="chancePayload.EnglishStandard.TOEFL">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEFL }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="TOEIC" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="990"
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و990"
                                                     v-model="chancePayload.EnglishStandard.TOEIC">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEIC }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="DUOLINGO" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="160"
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="الدرجة بين 0 و160"
                                                     v-model="chancePayload.EnglishStandard.DUOLINGO">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.DUOLINGO }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="Step" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                      placeholder="الدرجة بين 0 و100"
                                                     v-model="chancePayload.EnglishStandard.STEP">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.STEP }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="CEFR" role="tabpanel">
                                                 <button type="button" class="btn btn-degree m-2"
@@ -625,39 +627,39 @@
                                         </ul>
                                         <div class="tab-content" id="myOtherTabContent">
                                             <div class="tab-pane fade show active p-3" id="SAT" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="1600"
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و1600"
                                                     v-model="chancePayload.BrainStandard.SAT">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.SAT }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="Qudrat" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="الدرجة بين 0 و100"
                                                     v-model="chancePayload.BrainStandard.Qudrat">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.Qudrat }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="GAT" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                   placeholder="الدرجة بين 0 و100 "
                                                     v-model="chancePayload.BrainStandard.GAT">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.GAT }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="ACT" role="tabpanel">
-                                                <input type="range" class="form-range" min="1" max="36"
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="الدرجة بين 0 و36"
                                                     v-model="chancePayload.BrainStandard.ACT">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.ACT }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="Talent" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="2000"
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="الدرجة بين 0 و2000"
                                                     v-model="chancePayload.BrainStandard.Talent">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.Talent }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="AchivementTest" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                        placeholder="الدرجة بين 0 و100"
                                                     v-model="chancePayload.BrainStandard.AchivementTest">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.AchivementTest }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="SAAT" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و100"
                                                     v-model="chancePayload.BrainStandard.SAAT">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.SAAT }}</h6>
                                             </div>
                                         </div>
                                         <div>
@@ -693,14 +695,14 @@
                                         </ul>
                                         <div class="tab-content" id="myOtherTabContent">
                                             <div class="tab-pane fade show active p-3" id="SaudiCur" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و100"
                                                     v-model="chancePayload.CurStandard.SaudiCur">
-                                                <h6 class="ms-2">{{ chancePayload.CurStandard.SaudiCur }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="BritishCur" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و100"
                                                     v-model="chancePayload.CurStandard.BritishCur">
-                                                <h6 class="ms-2">{{ chancePayload.CurStandard.BritishCur }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="AmericanDiploma" role="tabpanel"
                                                 aria-labelledby="home-tab">
@@ -1075,8 +1077,12 @@ export default {
             } else {
                 let ul = '<ul>';
                 let li;
+               
+
                 for (const property in modalContentP) {
-                    li = `<li>${property}: ${modalContentP[property]}</li>`;
+                    const val = modalContentP[property];
+                    const displayVal = val !== null && val !== undefined && val !== "" ? val : "لا يوجد";
+                    li = `<li>${property}: ${ displayVal }</li>`;
                     ul += li;
                 }
                 ul += '</ul>'

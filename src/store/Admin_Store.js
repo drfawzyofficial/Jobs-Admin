@@ -182,11 +182,11 @@ export const Admin_Store = {
         const data = await Fetch("DELETE", `/admin/chance/remove`, { _id: payload._id });
         if (data.statusCode === 200) {
           commit("chanceDelete", data.result);
-          window.Swal.fire({ title: 'حذف الوظيفة', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })
+          window.Swal.fire({ title: 'حذف الفرصة', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })
         } else if (data.statusCode === 401 || data.statusCode === 500) {
           dispatch("Auth/Logout", {}, { root: true });
         } else {
-          window.Swal.fire({ title: 'حذف الوظيفة', text: data.message, icon: 'error', confirmButtonText: 'أتفهم' })
+          window.Swal.fire({ title: 'حذف الفرصة', text: data.message, icon: 'error', confirmButtonText: 'أتفهم' })
         }
         dispatch("Collection/loading", false, { root: true });
       } catch (err) {
@@ -200,7 +200,7 @@ export const Admin_Store = {
         const data = await Fetch("PUT", '/admin/chance/update', payload);
         if (data.statusCode === 200) {
           commit("chanceEdit", data.result);
-          window.Swal.fire({ title: 'تعديل الوظيفة', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })
+          window.Swal.fire({ title: 'تعديل الفرصة', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })
         } else if (data.statusCode === 401 || data.statusCode === 500) {
           dispatch("Auth/Logout", {}, { root: true });
         } else {

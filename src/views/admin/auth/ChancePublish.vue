@@ -426,37 +426,37 @@
                                             <div class="tab-pane fade show active p-3" id="SAT" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
                                                     placeholder="الدرجة بين 0 و1600"
-                                                    v-model="chancePayload.EnglishStandard.SAT">
+                                                    v-model="chancePayload.BrainStandard.SAT">
                                             </div>
                                             <div class="tab-pane fade p-3" id="Qudrat" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
                                                      placeholder="الدرجة بين 0 و100"
-                                                    v-model="chancePayload.EnglishStandard.Qudrat">
+                                                    v-model="chancePayload.BrainStandard.Qudrat">
                                             </div>
                                             <div class="tab-pane fade p-3" id="GAT" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
                                                    placeholder="الدرجة بين 0 و100 "
-                                                    v-model="chancePayload.EnglishStandard.GAT">
+                                                    v-model="chancePayload.BrainStandard.GAT">
                                             </div>
                                             <div class="tab-pane fade p-3" id="ACT" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
-                                                     placeholder="بين 0 و36 الدرجة"
-                                                    v-model="chancePayload.EnglishStandard.ACT">
+                                                   placeholder="الدرجة بين 0 و36"
+                                                    v-model="chancePayload.BrainStandard.ACT">
                                             </div>
                                             <div class="tab-pane fade p-3" id="Talent" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
                                                      placeholder="الدرجة بين 0 و2000"
-                                                    v-model="chancePayload.EnglishStandard.Talent">
+                                                    v-model="chancePayload.BrainStandard.Talent">
                                             </div>
                                             <div class="tab-pane fade p-3" id="AchivementTest" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
                                                         placeholder="الدرجة بين 0 و100"
-                                                    v-model="chancePayload.EnglishStandard.AchivementTest">
+                                                    v-model="chancePayload.BrainStandard.AchivementTest">
                                             </div>
                                             <div class="tab-pane fade p-3" id="SAAT" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
                                                     placeholder="الدرجة بين 0 و100"
-                                                    v-model="chancePayload.EnglishStandard.SAAT">
+                                                    v-model="chancePayload.BrainStandard.SAAT">
                                             </div>
                                         </div>
                                         <div>
@@ -494,13 +494,13 @@
                                         <div class="tab-content" id="myOtherTabContent">
                                             <div class="tab-pane fade show active p-3" id="SaudiCur" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
-                                                    placeholder="أدخل الدرجة"
-                                                    v-model="chancePayload.EnglishStandard.SaudiCur">
+                                                    placeholder="الدرجة بين 0 و100"
+                                                    v-model="chancePayload.CurStandard.SaudiCur">
                                             </div>
                                             <div class="tab-pane fade p-3" id="BritishCur" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
-                                                    placeholder="أدخل الدرجة"
-                                                    v-model="chancePayload.EnglishStandard.BritishCur">
+                                                    placeholder="الدرجة بين 0 و100"
+                                                    v-model="chancePayload.CurStandard.BritishCur">
                                             </div>
                                             <div class="tab-pane fade p-3" id="AmericanDiploma" role="tabpanel"
                                                 aria-labelledby="home-tab">

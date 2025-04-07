@@ -150,7 +150,7 @@
                             <div class="dash-widgetcontent">
                                 <h5><span class="counters" >{{
                                     statistics.chance.openChances }}</span></h5>
-                                <h6>فرصة مفتوحة</h6>
+                                <h6>فرصة مفتوحة التسجيل</h6>
                             </div>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
                             <div class="dash-widgetcontent">
                                 <h5><span class="counters" >{{
                                      statistics.chance.closedChances }}</span></h5>
-                                <h6>فرص مغلفة</h6>
+                                <h6>فرص مغلقة التسجيل</h6>
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                             <div class="dash-widgetcontent">
                                 <h5><span class="counters">{{
                                      statistics.chance.notStartedChances }}</span></h5>
-                                <h6>فرص لم تبدأ</h6>
+                                <h6>فرص ستفتح قريبًا</h6>
                             </div>
                         </div>
                     </div>
