@@ -25,8 +25,9 @@
 
                     <div id="sidebar-menu" class="sidebar-menu">
                         <div class="d-flex justify-content-center d-block d-lg-none">
-                            <a class="mobile-btn-close" id="mobile_btn_close"><img src="../../../assets/img/icons/close-circle1.svg"
-                            alt="img" height="35" width="35"></a>
+                            <a class="mobile-btn-close" id="mobile_btn_close"><img
+                                    src="../../../assets/img/icons/close-circle1.svg" alt="img" height="35"
+                                    width="35"></a>
                         </div>
                         <ul class="mt-3">
                             <li>
@@ -64,7 +65,8 @@
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContACTsManagement' }"
-                                    to="/students/contACTs"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                    to="/students/contACTs"><img src="../../../assets/img/icons/users1.svg"
+                                        alt="img"><span>
                                         إدارة التواصل</span> </router-link>
                             </li>
                             <li>
@@ -126,7 +128,7 @@
                                                 <input class="form-check-input" type="radio" name="chancePriority"
                                                     v-model="chancePayload.chancePriority" value="all">
                                                 <label class="form-check-label ms-2 fs-6" for="chancePriority-remote">
-                                                     الجميع
+                                                    الجميع
                                                 </label>
                                             </div>
                                         </div>
@@ -247,11 +249,11 @@
                                     </div>
                                     <div class="mt-3">
                                         <button type="button" class="btn btn-store" @click="prevTab()">
-                                              <span class="material-symbols-outlined align-middle">
+                                            <span class="material-symbols-outlined align-middle">
                                                 chevron_right
                                             </span>
                                             <span>السابق</span>
-                                          
+
                                         </button>
                                         <button type="button" class="btn btn-store ms-2" @click="nextTab()">
                                             <span>التالي</span>
@@ -344,24 +346,24 @@
                                                         obj.degree }}</button>
                                             </div>
                                             <div class="tab-pane fade p-3" id="TOEFL" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="120"
-                                                    v-model="chancePayload.EnglishStandard.TOEFLDegree">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEFLDegree }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و120"
+                                                    v-model="chancePayload.EnglishStandard.TOEFL">
                                             </div>
                                             <div class="tab-pane fade p-3" id="TOEIC" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="990"
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و990"
                                                     v-model="chancePayload.EnglishStandard.TOEIC">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEIC }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="DUOLINGO" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="160"
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="الدرجة بين 0 و160"
                                                     v-model="chancePayload.EnglishStandard.DUOLINGO">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.DUOLINGO }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="Step" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
+                                                <input type="text" class="form-control form-control-lg"
+                                                      placeholder="الدرجة بين 0 و100"
                                                     v-model="chancePayload.EnglishStandard.STEP">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.STEP }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="CEFR" role="tabpanel">
                                                 <button type="button" class="btn btn-degree m-2"
@@ -385,8 +387,8 @@
                                         <ul class="nav nav-tabs mt-2" id="otherMyTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" data-bs-toggle="tab"
-                                                    data-bs-target="#Sat" id="Sat-tab" type="button" role="tab"
-                                                    aria-controls="Sat" aria-selected="true">SAT</button>
+                                                    data-bs-target="#SAT" id="SAT-tab" type="button" role="tab"
+                                                    aria-controls="SAT" aria-selected="true">SAT</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Qudrat"
@@ -421,40 +423,40 @@
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myOtherTabContent">
-                                            <div class="tab-pane fade show active p-3" id="Sat" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="1600"
-                                                    v-model="chancePayload.BrainStandard.Sat">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.Sat }}</h6>
+                                            <div class="tab-pane fade show active p-3" id="SAT" role="tabpanel">
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و1600"
+                                                    v-model="chancePayload.EnglishStandard.SAT">
                                             </div>
                                             <div class="tab-pane fade p-3" id="Qudrat" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.BrainStandard.Qudrat">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.Qudrat }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="الدرجة بين 0 و100"
+                                                    v-model="chancePayload.EnglishStandard.Qudrat">
                                             </div>
                                             <div class="tab-pane fade p-3" id="GAT" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.BrainStandard.GAT">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.GAT }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                   placeholder="الدرجة بين 0 و100 "
+                                                    v-model="chancePayload.EnglishStandard.GAT">
                                             </div>
                                             <div class="tab-pane fade p-3" id="ACT" role="tabpanel">
-                                                <input type="range" class="form-range" min="1" max="36"
-                                                    v-model="chancePayload.BrainStandard.ACT">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.ACT }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="بين 0 و36 الدرجة"
+                                                    v-model="chancePayload.EnglishStandard.ACT">
                                             </div>
                                             <div class="tab-pane fade p-3" id="Talent" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="2000"
-                                                    v-model="chancePayload.BrainStandard.Talent">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.Talent }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                     placeholder="الدرجة بين 0 و2000"
+                                                    v-model="chancePayload.EnglishStandard.Talent">
                                             </div>
                                             <div class="tab-pane fade p-3" id="AchivementTest" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.BrainStandard.AchivementTest">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.AchivementTest }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                        placeholder="الدرجة بين 0 و100"
+                                                    v-model="chancePayload.EnglishStandard.AchivementTest">
                                             </div>
                                             <div class="tab-pane fade p-3" id="SAAT" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.BrainStandard.SAAT">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.SAAT }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="الدرجة بين 0 و100"
+                                                    v-model="chancePayload.EnglishStandard.SAAT">
                                             </div>
                                         </div>
                                         <div>
@@ -491,14 +493,14 @@
                                         </ul>
                                         <div class="tab-content" id="myOtherTabContent">
                                             <div class="tab-pane fade show active p-3" id="SaudiCur" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.CurStandard.SaudiCur">
-                                                <h6 class="ms-2">{{ chancePayload.CurStandard.SaudiCur }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="أدخل الدرجة"
+                                                    v-model="chancePayload.EnglishStandard.SaudiCur">
                                             </div>
                                             <div class="tab-pane fade p-3" id="BritishCur" role="tabpanel">
-                                                <input type="range" class="form-range" min="0" max="100"
-                                                    v-model="chancePayload.CurStandard.BritishCur">
-                                                <h6 class="ms-2">{{ chancePayload.CurStandard.BritishCur }}</h6>
+                                                <input type="text" class="form-control form-control-lg"
+                                                    placeholder="أدخل الدرجة"
+                                                    v-model="chancePayload.EnglishStandard.BritishCur">
                                             </div>
                                             <div class="tab-pane fade p-3" id="AmericanDiploma" role="tabpanel"
                                                 aria-labelledby="home-tab">
@@ -712,14 +714,14 @@ export default {
             applicantEdus: [],
             EnglishStandard: {
                 IELTS: '',
-                TOEFLDegree: '',
+                TOEFL: '',
                 TOEIC: '',
                 DUOLINGO: '',
                 STEP: '',
                 CEFR: '',
             },
             BrainStandard: {
-                Sat: '',
+                SAT: '',
                 Qudrat: '',
                 GAT: '',
                 ACT: '',
@@ -849,7 +851,7 @@ export default {
                 degree: "4"
             },
         ]);
-        
+
         const CEFRs = ref([
             {
                 degree: "A1"
@@ -921,7 +923,7 @@ export default {
         const resetEnglishStandard = () => {
             chancePayload.value.EnglishStandard = {
                 IELTS: '',
-                TOEFLDegree: '',
+                TOEFL: '',
                 TOEIC: '',
                 DUOLINGO: '',
                 STEP: '',
@@ -930,7 +932,7 @@ export default {
         }
         const resetBrainStandard = () => {
             chancePayload.value.BrainStandard = {
-                Sat: '',
+                SAT: '',
                 Qudrat: '',
                 GAT: '',
                 ACT: '',

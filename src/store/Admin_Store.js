@@ -363,6 +363,7 @@ export const Admin_Store = {
         dispatch("Collection/loading", true, { root: true });
         const data = await Fetch("POST", `/admin/student/contact/message`, payload);
         if (data.statusCode === 200) {
+          commit("deleteContact", data.result);
           window.Swal.fire({ title: 'إرسال الرسالة', text: data.message, icon: 'success', confirmButtonText: 'أتفهم' })
         } else if (data.statusCode === 401 || data.statusCode === 500) {
           dispatch("Auth/Logout", {}, { root: true });

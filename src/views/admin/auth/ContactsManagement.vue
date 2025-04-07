@@ -53,7 +53,7 @@
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
-                                    to="/contacts/manage"><img src="../../../assets/img/icons/edit-5.svg"
+                                    to="/students/manage"><img src="../../../assets/img/icons/edit-5.svg"
                                         alt="img"><span>
                                         إدارة الطلاب</span> </router-link>
                             </li>

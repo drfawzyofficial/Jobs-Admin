@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                             <h4 class="fw-bold">جميع الفرص</h4>
-                            <p class="mt-2">جميع الفرص التي تم نشرها من قبل المسؤول . يمكنك إدارتها بشكل كامل من حيث التعديل والحذف</p>
+                            <p class="mt-2">جميع الفرص التي تم نشرها من قبل المسؤول. يمكنك إدارتها بشكل كامل من حيث التعديل والحذف.</p>
                             <div class="table-responsive mb-3 mt-3">
                                 <table class="table text-center">
                                     <thead class="table-light">
@@ -549,8 +549,8 @@
                                             </div>
                                             <div class="tab-pane fade p-3" id="TOEFL" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="120"
-                                                    v-model="chancePayload.EnglishStandard.TOEFLDegree">
-                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEFLDegree }}</h6>
+                                                    v-model="chancePayload.EnglishStandard.TOEFL">
+                                                <h6 class="ms-2">{{ chancePayload.EnglishStandard.TOEFL }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="TOEIC" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="990"
@@ -589,8 +589,8 @@
                                         <ul class="nav nav-tabs mt-2" id="otherMyTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" data-bs-toggle="tab"
-                                                    data-bs-target="#Sat" id="Sat-tab" type="button" role="tab"
-                                                    aria-controls="Sat" aria-selected="true">SAT</button>
+                                                    data-bs-target="#SAT" id="SAT-tab" type="button" role="tab"
+                                                    aria-controls="SAT" aria-selected="true">SAT</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Qudrat"
@@ -624,10 +624,10 @@
                                             </li>
                                         </ul>
                                         <div class="tab-content" id="myOtherTabContent">
-                                            <div class="tab-pane fade show active p-3" id="Sat" role="tabpanel">
+                                            <div class="tab-pane fade show active p-3" id="SAT" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="1600"
-                                                    v-model="chancePayload.BrainStandard.Sat">
-                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.Sat }}</h6>
+                                                    v-model="chancePayload.BrainStandard.SAT">
+                                                <h6 class="ms-2">{{ chancePayload.BrainStandard.SAT }}</h6>
                                             </div>
                                             <div class="tab-pane fade p-3" id="Qudrat" role="tabpanel">
                                                 <input type="range" class="form-range" min="0" max="100"
@@ -889,14 +889,14 @@ export default {
             applicantEdus: [],
             EnglishStandard: {
                 IELTS: '',
-                TOEFLDegree: '',
+                TOEFL: '',
                 TOEIC: '',
                 DUOLINGO: '',
                 STEP: '',
                 CEFR: '',
             },
             BrainStandard: {
-                Sat: '',
+                SAT: '',
                 Qudrat: '',
                 GAT: '',
                 ACT: '',
@@ -1144,7 +1144,7 @@ export default {
         const resetEnglishStandard = () => {
             chancePayload.value.EnglishStandard = {
                 IELTS: '',
-                TOEFLDegree: '',
+                TOEFL: '',
                 TOEIC: '',
                 DUOLINGO: '',
                 STEP: '',
@@ -1153,7 +1153,7 @@ export default {
         }
         const resetBrainStandard = () => {
             chancePayload.value.BrainStandard = {
-                Sat: '',
+                SAT: '',
                 Qudrat: '',
                 GAT: '',
                 ACT: '',

@@ -106,7 +106,7 @@
                                                 <th scope="col">حالة التفعيل</th>
                                                 <th scope="col">تاريخ الميلاد</th>
                                                 <th scope="col">الجنس</th>
-                                                <th scope="col">العمر</th>
+                                                <!-- <th scope="col">العمر</th> -->
                                                 <th scope="col">المرحلة</th>
                                                 <th scope="col">إرسال رسالة</th>
                                                 <th scope="col">حذف الطالب</th>
@@ -123,9 +123,9 @@
                                                         :src="student.avatar" /></td>
                                                 <td>{{ student.online === true ? "متصل" : "غير متصل" }}</td>
                                                 <td>{{ student.is_verified === true ? "مفعل" : "غير مفعل" }}</td>
-                                                <td>{{ student.dOB ? student.dOB : "لا يوجد" }}</td>
-                                                <td>{{ student.gender ? student.gender : "لا يوجد" }}</td>
-                                                <td>{{ student.applicantAge ? student.applicantAge : "لا يوجد" }}</td>
+                                                <td>{{ student.DOB ? student.DOB : "لا يوجد" }}</td>
+                                                <td>{{ student.applicantGender ? student.applicantGender : "لا يوجد" }}</td>
+                                                <!-- <td>{{ student.applicantAge ? student.applicantAge : "لا يوجد" }}</td> -->
                                                 <td>{{ student.applicantEdu ? student.applicantEdu : "لا يوجد" }}</td>
                                                 <td>
                                                     <button type="button" class="btn btn-sm btn-store ms-1"
