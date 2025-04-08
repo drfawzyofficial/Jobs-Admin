@@ -488,7 +488,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="applicantedus mb-3">
-                                                    <label class="form-label">المرحلة التعلييمة</label>
+                                                    <label class="form-label">المرحلة التعليمية</label>
                                                     <div class="choose-edu">
                                                         <button type="button" class="btn btn-special m-2"
                                                             v-for="(edu, index) in helperObj.applicantEdus" :key="index"
