@@ -954,6 +954,11 @@ a:hover {
   box-shadow: none !important;
 }
 
+.form-control[type="date"] {
+  text-align: right;
+}
+
+
 .form-control:focus {
   box-shadow: none;
   border-color: #3AAFA9;
