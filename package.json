@@ -1,7 +1,7 @@
 {
-  "name": "khattit admin",
+  "name": "khattit-admin",
   "version": "1.0.0",
-  "description": "Khattit Admin is a web app that provides jobs to studentsYy",
+  "description": "Khattit Admin is a web app that provides chances to students",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server",
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "npx npm-force-resolutions"
   },
-  "author": "Jobs",
+  "author": "khattit",
   "dependencies": {
     "@babel/runtime": "^7.20.7",
     "@popperjs/core": "^2.11.8",
