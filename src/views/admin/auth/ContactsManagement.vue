@@ -5,10 +5,10 @@
         <div class="header">
             <div class="header-left active">
                 <router-link to="/dashboard" class="logo">
-                    <img src="../../../assets/img/logo.png" title="Jobs" alt="Jobs">
+                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit">
                 </router-link>
                 <router-link to="/dashboard" class="logo-small">
-                    <img src="../../../assets/img/logo.png" title="Jobs" alt="Jobs">
+                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit">
                 </router-link>
             </div>
             <a id="mobile_btn" class="mobile_btn" href="#sidebar">
