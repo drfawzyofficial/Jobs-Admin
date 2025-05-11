@@ -8,7 +8,7 @@
                     <div class="login-content">
                         <div class="login-userset">
                             <div class="login-logo">
-                                <img class="khattit-image rounded-circle" src="../../../assets/img/logo.png" alt="img">
+                                <img class="khattit-image rounded-circle" src="../../../assets/img/logo.png" alt="img" loading="lazy">
                             </div>
                             <div class="login-userheading">
                                 <h3>تسجيل الدخول</h3>
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="login-img">
-                        <img src="../../../assets/img/jobs.png" alt="Light Image" title="Light Image">
+                        <img src="../../../assets/img/jobs.png" alt="Light Image" title="Light Image" loading="lazy">
                     </div>
                 </div>
             </div>

@@ -5,10 +5,10 @@
         <div class="header">
             <div class="header-left active">
                 <router-link to="/dashboard" class="logo">
-                    <img src="../../../assets/img/logo.png" title="chances" alt="chances">
+                    <img src="../../../assets/img/logo.png" title="chances" alt="chances" loading="lazy">
                 </router-link>
                 <router-link to="/dashboard" class="logo-small">
-                    <img src="../../../assets/img/logo.png" title="chances" alt="chances">
+                    <img src="../../../assets/img/logo.png" title="chances" alt="chances" loading="lazy">
                 </router-link>
             </div>
             <a id="mobile_btn" class="mobile_btn" href="#sidebar">
@@ -26,49 +26,49 @@
                     <div id="sidebar-menu" class="sidebar-menu">
                         <div class="d-flex justify-content-center d-block d-lg-none">
                             <a class="mobile-btn-close" id="mobile_btn_close"><img src="../../../assets/img/icons/close-circle1.svg"
-                            alt="img" height="35" width="35"></a>
+                            alt="img" height="35" width="35"   loading="lazy"></a>
                         </div>
                         <ul class="mt-3">
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminDashboard' }" to="/dashboard"><img
-                                        src="../../../assets/img/icons/dashboard.svg" alt="img"><span>
+                                        src="../../../assets/img/icons/dashboard.svg" alt="img"   loading="lazy"><span>
                                         لوحة التحكم</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ChancePublish' }" to="/chance/publish"><img
-                                        src="../../../assets/img/icons/transfer1.svg" alt="img"><span>
+                                        src="../../../assets/img/icons/transfer1.svg" alt="img"   loading="lazy"><span>
                                         نشر فرصة</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ChancesManagement' }"
                                     to="/chances/manage"><img src="../../../assets/img/icons/transcation.svg"
-                                        alt="img"><span>
+                                        alt="img"   loading="lazy"><span>
                                         إدارة الفرص</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
-                                    to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"><span>
+                                    to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"   loading="lazy"><span>
                                         إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
                                     to="/students/manage"><img src="../../../assets/img/icons/edit-5.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         إدارة الطلاب</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
-                                    to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                    to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"   loading="lazy"><span>
                                         إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContACTsManagement' }"
-                                    to="/students/contacts"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                    to="/students/contacts"><img src="../../../assets/img/icons/users1.svg" alt="img"   loading="lazy"><span>
                                         إدارة التواصل</span> </router-link>
                             </li>
                             <li>
                                 <a @click="AdminLogout"><img src="../../../assets/img/icons/log-out.svg"
-                                        alt="img"><span>
+                                        alt="img"   loading="lazy"><span>
                                         تسجيل الخروج</span> </a>
                             </li>
                         </ul>
@@ -94,7 +94,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="fw-bold">بحث كامل</h4>
+                            <h4 class="fw-bold">تصفية الفرص</h4>
                             <p class="mt-2">يهدف البحث الكامل إلى تصفية كافة الفرص بشكل شامل. يمكنك إدخال بعض أو جميع المدخلات أدناه، ثم الضغط على زر البحث لتصفية الفرص المتاحة.</p>
                             <div class="row my-3">
                                 <div class="col-xl-3 mt-3 mt-xl-0">
@@ -185,7 +185,7 @@
                                             <td>{{ chance.chanceStartDate }}</td>
                                             <td>{{ chance.chanceEndDate }}</td>
                                             <td>{{ chance.noOfClicks }}</td>
-                                            <td><img class="border shadow-sm" :src="chance.chanceImage" /></td>
+                                            <td><img class="border shadow-sm" :src="chance.chanceImage"   loading="lazy"/></td>
                                             <td>
                                                 <button type="button" class="btn btn-sm btn-store"
                                                     @click="openModalBox('المستندات', chance.documentsContent? chance.documentsContent : 'لا يوجد مستندات', true)">
@@ -442,13 +442,13 @@
                                                         class="btnUpload d-flex align-items-center justify-content-center">
                                                         <span>إضافة صورة</span>
                                                         <img class="ms-2" src="../../../assets/img/icons/image.svg"
-                                                            height="27" width="27" />
+                                                            height="27" width="27"   loading="lazy"/>
                                                     </button>
                                                     <input type="file" name="imgFile" @change="onFileChange" />
                                                 </div>
                                                 <div class="image-preview text-center mt-3" v-if="imagePreview">
                                                     <img class="shadow-sm rounded-12" :src="imagePreview" height="250"
-                                                        width="250" title="imagePreview" alt="imagePreview" />
+                                                        width="250" title="imagePreview" alt="imagePreview" loading="lazy"/>
                                                 </div>
                                                 <div class="mt-3">
                                                     <button type="button" class="btn btn-store" @click="nextTab()">
@@ -525,9 +525,9 @@
                                                     aria-selected="false">TOEIC</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
-                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#DUOLINGO"
-                                                    type="button" role="tab" aria-controls="DUOLINGO"
-                                                    aria-selected="false">DUOLINGO</button>
+                                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Duolingo"
+                                                    type="button" role="tab" aria-controls="Duolingo"
+                                                    aria-selected="false">Duolingo</button>
                                             </li>
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#Step"
@@ -559,10 +559,10 @@
                                                     placeholder="الدرجة بين 0 و990"
                                                     v-model="chancePayload.EnglishStandard.TOEIC">
                                             </div>
-                                            <div class="tab-pane fade p-3" id="DUOLINGO" role="tabpanel">
+                                            <div class="tab-pane fade p-3" id="Duolingo" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
                                                      placeholder="الدرجة بين 0 و160"
-                                                    v-model="chancePayload.EnglishStandard.DUOLINGO">
+                                                    v-model="chancePayload.EnglishStandard.Duolingo">
                                             </div>
                                             <div class="tab-pane fade p-3" id="Step" role="tabpanel">
                                                 <input type="text" class="form-control form-control-lg"
@@ -893,7 +893,7 @@ export default {
                 IELTS: '',
                 TOEFL: '',
                 TOEIC: '',
-                DUOLINGO: '',
+                Duolingo: '',
                 STEP: '',
                 CEFR: '',
             },
@@ -1152,7 +1152,7 @@ export default {
                 IELTS: '',
                 TOEFL: '',
                 TOEIC: '',
-                DUOLINGO: '',
+                Duolingo: '',
                 STEP: '',
                 CEFR: '',
             }

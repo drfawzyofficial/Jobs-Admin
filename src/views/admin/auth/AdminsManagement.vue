@@ -5,10 +5,10 @@
         <div class="header">
             <div class="header-left active">
                 <router-link to="/dashboard" class="logo">
-                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit">
+                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit" loading="lazy">
                 </router-link>
                 <router-link to="/dashboard" class="logo-small">
-                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit">
+                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit" loading="lazy">
                 </router-link>
             </div>
             <a id="mobile_btn" class="mobile_btn" href="#sidebar">
@@ -26,49 +26,49 @@
                     <div id="sidebar-menu" class="sidebar-menu">
                         <div class="d-flex justify-content-center d-block d-lg-none">
                             <a class="mobile-btn-close" id="mobile_btn_close"><img src="../../../assets/img/icons/close-circle1.svg"
-                            alt="img" height="35" width="35"></a>
+                            alt="img" loading="lazy" height="35" width="35"></a>
                         </div>
                         <ul class="mt-3">
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminDashboard' }" to="/dashboard"><img
-                                        src="../../../assets/img/icons/dashboard.svg" alt="img"><span>
+                                        src="../../../assets/img/icons/dashboard.svg" alt="img" loading="lazy"><span>
                                         لوحة التحكم</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ChancePublish' }" to="/chance/publish"><img
-                                        src="../../../assets/img/icons/transfer1.svg" alt="img"><span>
+                                        src="../../../assets/img/icons/transfer1.svg" alt="img" loading="lazy"><span>
                                         نشر فرصة</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ChancesManagement' }"
                                     to="/chances/manage"><img src="../../../assets/img/icons/transcation.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         إدارة الفرص</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
-                                    to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"><span>
+                                    to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img" loading="lazy"><span>
                                         إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
                                     to="/students/manage"><img src="../../../assets/img/icons/edit-5.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         إدارة الطلاب</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
-                                    to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                    to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img" loading="lazy"><span>
                                         إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContactsManagement' }"
-                                    to="/students/contacts"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                    to="/students/contacts"><img src="../../../assets/img/icons/users1.svg" alt="img" loading="lazy"><span>
                                         إدارة التواصل</span> </router-link>
                             </li>
                             <li>
                                 <a @click="AdminLogout"><img src="../../../assets/img/icons/log-out.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         تسجيل الخروج</span> </a>
                             </li>
                         </ul>

@@ -5,10 +5,10 @@
         <div class="header">
             <div class="header-left active">
                 <router-link to="/dashboard" class="logo">
-                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit">
+                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit" loading="lazy">
                 </router-link>
                 <router-link to="/dashboard" class="logo-small">
-                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit">
+                    <img src="../../../assets/img/logo.png" title="khattit" alt="khattit" loading="lazy">
                 </router-link>
             </div>
             <a id="mobile_btn" class="mobile_btn" href="#sidebar">
@@ -31,46 +31,46 @@
                         <ul class="mt-3">
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminDashboard' }" to="/dashboard"><img
-                                        src="../../../assets/img/icons/dashboard.svg" alt="img"><span>
+                                        src="../../../assets/img/icons/dashboard.svg" alt="img" loading="lazy"><span>
                                         لوحة التحكم</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ChancePublish' }"
                                     to="/chance/publish"><img src="../../../assets/img/icons/transfer1.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         نشر فرصة</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ChancesManagement' }"
                                     to="/chances/manage"><img src="../../../assets/img/icons/transcation.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         إدارة الفرص</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminManagement' }"
-                                    to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img"><span>
+                                    to="/admin/manage"><img src="../../../assets/img/icons/time.svg" alt="img" loading="lazy"><span>
                                         إدارة المسؤول </span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'StudentsManagement' }"
                                     to="/students/manage"><img src="../../../assets/img/icons/edit-5.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         إدارة الطلاب</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'AdminsManagement' }"
-                                    to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img"><span>
+                                    to="/admins/manage"><img src="../../../assets/img/icons/users1.svg" alt="img" loading="lazy"><span>
                                         إدارة المسؤولين</span> </router-link>
                             </li>
                             <li>
                                 <router-link :class="{ 'active': currentPath == 'ContactsManagement' }"
                                     to="/students/contacts"><img src="../../../assets/img/icons/users1.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         إدارة التواصل</span> </router-link>
                             </li>
                             <li>
                                 <a @click="AdminLogout"><img src="../../../assets/img/icons/log-out.svg"
-                                        alt="img"><span>
+                                        alt="img" loading="lazy"><span>
                                         تسجيل الخروج</span> </a>
                             </li>
                         </ul>
@@ -119,7 +119,7 @@
                                                 <td>{{ contact._studentID.phone }} </td>
                                                 <td>
                                                     <button type="button" class="btn btn-sm btn-store"
-                                                        @click="openModalBox('الاستفسار', contact.message, true)">
+                                                        @click="openModalBox(`استفسار بخصوص: ${ contact.subject }`, contact.message, true)">
                                                         <span>فتح</span>
                                                         <span class="material-symbols-outlined align-middle ms-1 fs-6">
                                                             open_in_new
@@ -292,7 +292,10 @@ export default {
         const AdminLogout = () => {
             store.dispatch("Auth/Logout", { data: null })
         }
-        const deleteContact = (_id) => store.dispatch("Admin_Store/deleteContact", { _id: _id });
+        const deleteContact = (_id) => {
+            store.dispatch("Admin_Store/deleteContact", { _id: _id });
+            Modal.getInstance(modalMessage.value)?.hide();
+        }
         const openModalBox = (modalTitleP, modalContentP, detection) => {
             new Modal(modalContentRef.value).show()
             modalTitle.value = modalTitleP;
